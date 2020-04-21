@@ -10,6 +10,7 @@
         </el-tabs>
       </div>
     </el-drawer>
+    <audio :src="mus" class="media-audio" loop ref="MusicPlay"></audio>
   </div>
 </template>
 <script>
@@ -17,7 +18,8 @@ export default {
   name: "navs",
   data() {
     return {
-        activeName:'/',
+      mus: require("../../assets/qing.mp3"),
+      activeName: "/",
       allofpage: [
         {
           url: "/",
@@ -34,7 +36,7 @@ export default {
         {
           url: "/links",
           name: "链接"
-        },
+        }
       ],
       item_img: [
         require("../../assets/img/menu.png"),
@@ -59,10 +61,26 @@ export default {
           this.$router.push({
             path: "/"
           });
-          this.activeName='/';
+          this.activeName = "/";
           break;
         case 2:
-          console.log(el);
+          let but = this.$refs.MusicPlay;
+          if (but.paused) {
+            this.$refs.MusicPlay.play();
+            this.$notify({
+              title: "提示",
+              message: "音乐开始播放!",
+              type: "success",
+              position: "bottom-right"
+            });
+          } else {
+            this.$refs.MusicPlay.pause();
+            this.$notify.info({
+              title: "提示",
+              message: "音乐停止播放！",
+              position: "bottom-right"
+            });
+          }
           break;
         default:
           this.drawer = true;
@@ -85,8 +103,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px ;
-    margin-bottom: 5px;
+    padding: 15px;
     img {
       width: 1.6rem;
     }

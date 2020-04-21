@@ -1,5 +1,6 @@
 <template>
 <div class="links">
+    <el-backtop></el-backtop>
   <ul>
     <li v-for="(v,i) in data" :key="i">
       <h6>{{v.title}}</h6>

@@ -1,5 +1,7 @@
 <template>
   <div class="HelloWorld">
+    <!-- 返回顶部 -->
+    <el-backtop></el-backtop>
     <div class="the_head">
       <ul>
         <li v-for="(v,i) in head_poem" :key="i">{{v}}</li>
@@ -11,7 +13,10 @@
       </ul>
     </div>
     <div class="img_box">
-      <img src="../../assets/img/25043752.gif" alt="">
+       <el-image
+      :src="theurl"
+      fit="contain" 
+      :preview-src-list="srcList"></el-image>
     </div>
     <div class="the_story">
       <ul>
@@ -19,14 +24,17 @@
       </ul>
     </div>
     <div class="img_box">
-      <img src="../../assets/img/25043751.gif" alt="">
+      <el-image
+      :src="theurl2"
+      fit="contain" 
+      :preview-src-list="srcList"></el-image>
     </div>
     <div class="last_poem">
       <ul>
         <li v-for="(v,i) in last_poem" :key="i">{{v}}</li>
       </ul>
     </div>
-    <div class="img_box_qq" v-if="the_qq">
+    <div class="img_box_qq" v-show="the_qq">
       <img src="../../assets/img/myqq.png" alt="">
     </div>
     <div class="the_bottom">
@@ -44,6 +52,12 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
+      srcList:[
+        require('../../assets/img/25043752.gif'),
+        require('../../assets/img/25043751.gif')
+      ],
+      theurl2:require('../../assets/img/25043751.gif'),
+      theurl:require('../../assets/img/25043752.gif'),
       the_qq:false,
       botimg:[
         require('../../assets/img/social_github.svg'),
@@ -83,6 +97,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+/deep/ .el-image{
+  width: 100%;
+}
 .the_bottom{
   margin-top: 1rem;
   padding: 1.2rem 0;
