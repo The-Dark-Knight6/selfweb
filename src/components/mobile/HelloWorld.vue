@@ -13,10 +13,7 @@
       </ul>
     </div>
     <div class="img_box">
-       <el-image
-      :src="theurl"
-      fit="contain" 
-      :preview-src-list="srcList"></el-image>
+      <img src="../../assets/img/25043752.gif" alt="">
     </div>
     <div class="the_story">
       <ul>
@@ -24,10 +21,7 @@
       </ul>
     </div>
     <div class="img_box">
-      <el-image
-      :src="theurl2"
-      fit="contain" 
-      :preview-src-list="srcList"></el-image>
+      <img src="../../assets/img/25043751.gif" alt="">
     </div>
     <div class="last_poem">
       <ul>
@@ -52,12 +46,6 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      srcList:[
-        require('../../assets/img/25043752.gif'),
-        require('../../assets/img/25043751.gif')
-      ],
-      theurl2:require('../../assets/img/25043751.gif'),
-      theurl:require('../../assets/img/25043752.gif'),
       the_qq:false,
       botimg:[
         require('../../assets/img/social_github.svg'),

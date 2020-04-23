@@ -5,9 +5,54 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <title>小付同学</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../../static/ico2.ico"/>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
 </html>
+
+<script>
+  //  function thecolor() { //rgb颜色随机
+  //   var r = Math.floor(Math.random() * 256);
+  //   var g = Math.floor(Math.random() * 256);
+  //   var b = Math.floor(Math.random() * 256);
+  //   var rgb = '(' + r + ',' + g + ',' + b + ')';
+  //   console.log(rgb);
+  //   return rgb;
+  // }
+  // 社会主义核心价值观
+  var a_idx = 0;
+  $("body").click(function (e) {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    var a = new Array(
+      "富强", "民主", "文明", "和谐",
+      "自由", "平等", "公正", "法治",
+      "爱国", "敬业", "诚信", "友善"
+    );
+    var $i = $("<span/>").text(a[a_idx]);
+    a_idx = (a_idx + 1) % a.length;
+    var x = e.pageX,
+      y = e.pageY;
+    $i.css({
+      "z-index": 144469,
+      "top": y - 20,
+      "left": x,
+      "position": "absolute",
+      "font-weight": "bold",
+      "color": 'rgb(' + r + ',' + g + ',' + b + ')'
+    });
+    $("body").append($i);
+    $i.animate({
+        "top": y - 300,
+        "opacity": 0
+      },
+      2000,
+      function () {
+        $i.remove()
+      })
+  });
+</script>
