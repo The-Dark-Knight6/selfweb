@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-container>
-        <el-aside width="220px">
+        <el-aside width="200px">
           <left></left>
         </el-aside>
         <el-container>
@@ -39,9 +39,8 @@ body,
 }
 
 .el-aside {
-  background-color: #d3dce6;
+  background-color: #2b2f3e;
   color: #333;
   text-align: center;
-  line-height: 200px;
 }
 </style>

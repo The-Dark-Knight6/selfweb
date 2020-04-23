@@ -11,6 +11,14 @@ let router = new Router({
       component: resolve => require(['@/components/pc/HelloWorld'], resolve),
       meta: { title: '首页' }
     },
+    {
+      path: '/jsworld',
+      component: resolve => require(['@/components/pc/jsworld'], resolve),
+    },
+    {
+      path: '/pc_adert',
+      component: resolve => require(['@/components/pc/pc_adert'], resolve),
+    },
   ]
 })
 /**
