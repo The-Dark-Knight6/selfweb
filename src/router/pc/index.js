@@ -12,12 +12,16 @@ let router = new Router({
       meta: { title: '首页' }
     },
     {
-      path: '/jsworld',
-      component: resolve => require(['@/components/pc/jsworld'], resolve),
+      path: '/alink',
+      component: resolve => require(['@/components/pc/alink'], resolve),
     },
     {
       path: '/pc_adert',
       component: resolve => require(['@/components/pc/pc_adert'], resolve),
+    },
+    {
+      path: '/sometext',
+      component: resolve => require(['@/components/pc/sometext'], resolve),
     },
   ]
 })

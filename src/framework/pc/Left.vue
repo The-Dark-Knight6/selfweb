@@ -62,15 +62,15 @@ export default {
           ]
         },
         {
-          title: "JavaScript",
+          title: "闲言碎语",
           child: [
             {
-              name: "列表",
-              routers: "/jsworld"
+              name: "奇葩说",
+              routers: "/sometext"
             },
             {
-              name: "Echarts",
-              routers: "/jsworld"
+              name: "好链接",
+              routers: "/alink"
             }
           ]
         }

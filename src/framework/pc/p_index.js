@@ -5,8 +5,12 @@ import App from './App'
 import router from '../../router/pc/index'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import api from '../../assets/apis/api'
+import VueResource from 'vue-resource'
 
 Vue.use(ElementUI);
+Vue.prototype.api = api;
+Vue.use(VueResource)
 
 Vue.config.productionTip = false
 

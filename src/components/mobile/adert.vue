@@ -12,6 +12,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "adert",
@@ -36,7 +37,13 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
+@mixin spacial_p {
+  background: linear-gradient(to right, blue, red);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .adert {
   height: 100%;
   background-color: #f8fafa;
@@ -51,6 +58,7 @@ export default {
     padding: .4rem 0;
     li {
       margin: .8rem 0;
+      @include spacial_p;
     }
   }
 }

@@ -1,69 +1,69 @@
 <template>
-<div class="sometext">
+  <div class="sometext">
     <el-backtop></el-backtop>
- <ul class="before">
-   <li v-for="(v,i) in data" :key="i">{{v}}</li>
- </ul>
- <div class="theimg">
-   <img src="../../assets/img/icanbb.jpg" alt="">
- </div>
- <ul class="thepoem">
-   <li v-for="(v,i) in poem" :key="i">
-     <span>{{v}}</span>
-   </li>
- </ul>
-</div>
+    <ul class="before">
+      <li v-for="(v,i) in data" :key="i">{{v}}</li>
+    </ul>
+    <div class="theimg">
+      <img src="../../assets/img/icanbb.jpg" alt />
+    </div>
+    <ul class="thepoem">
+      <li v-for="(v,i) in poem" :key="i">
+        <span>{{v}}</span>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
   name: "sometext",
-  data () {
+  data() {
     return {
-      data:[],
-      poem:[],
+      data: [],
+      poem: []
     };
   },
-  mounted(){
+  mounted() {
     this.getdata();
   },
-  methods:{
-    getdata(){
-       let url = this.api.m_text;
+  methods: {
+    getdata() {
+      let url = this.api.m_text;
       this.$http.get(url).then(res => {
         let my = res.data;
-        console.log(my)
+        console.log(my);
         this.data = my.data;
         this.poem = my.poem;
       });
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
-.sometext{
+.sometext {
   background-color: #eef1ed;
-  .theimg{
-    margin: 1rem ;
-    img{
+  .theimg {
+    margin: 1rem;
+    img {
       width: 100%;
-      opacity: .5;
+      opacity: 0.5;
     }
   }
-  ul{
-    padding: .2rem ;
-    li{
+  ul {
+    padding: 0.2rem;
+    li {
       margin: 1rem 0;
       padding: 0 1rem;
-      border-bottom: .1rem dashed #ddd;
+      border-bottom: 0.1rem dashed #ddd;
     }
   }
-  ul.thepoem{
+  ul.thepoem {
     text-align: center;
-    li{
+    li {
       border: 0;
-      span{
+      span {
         display: inline-block;
-        border-bottom: .1rem dashed #c8c1c1
+        border-bottom: 0.1rem dashed #c8c1c1;
       }
     }
   }
