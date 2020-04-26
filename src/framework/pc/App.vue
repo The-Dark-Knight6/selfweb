@@ -1,5 +1,11 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    v-loading="loading"
+    element-loading-text="拼命加载中"
+    element-loading-spinner="el-icon-loading"
+    element-loading-background="rgba(0, 0, 0, 0.8)"
+  >
     <el-container>
       <el-aside width="200px">
         <left></left>
@@ -17,6 +23,16 @@ export default {
   name: "App",
   components: {
     left
+  },
+  data(){
+    return{
+      loading:true
+    }
+  },
+  mounted(){
+    setTimeout(()=>{
+      this.loading=false;
+    },1500);
   }
 };
 </script>
@@ -29,7 +45,7 @@ body,
   padding: 0;
   margin: 0;
   height: 100%;
-  overflow:auto;
+  overflow: auto;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

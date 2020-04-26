@@ -23,6 +23,10 @@ let router = new Router({
       path: '/links',
       component: resolve => require(['@/components/mobile/links'], resolve),
     },
+    {
+      path: '/listen',
+      component: resolve => require(['@/components/mobile/listen'], resolve),
+    },
   ]
 })
 /**

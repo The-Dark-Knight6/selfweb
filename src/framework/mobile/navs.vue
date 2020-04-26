@@ -36,6 +36,10 @@ export default {
         {
           url: "/links",
           name: "链接"
+        },
+        {
+          url: "/listen",
+          name: "周杰伦"
         }
       ],
       item_img: [

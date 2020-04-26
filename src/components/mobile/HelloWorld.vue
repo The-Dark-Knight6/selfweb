@@ -62,6 +62,17 @@ export default {
     this.getdata();
   },
   methods:{
+  //   downloadPDf() {
+  //     let url = this.api.musics;
+  //    this.$http.get(url).then(res=>{
+  //      let data = res.url;
+  //      console.log(data);
+  //       let a = document.createElement('a');
+  //  a.href = data;
+  //  a.download = 'adsf.mp3';
+  //  a.click();
+  //    })
+  //     },
     bot_img_click(el){
       switch(el){
         case 1:this.the_qq = !this.the_qq; break;
