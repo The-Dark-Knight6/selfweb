@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss'>
 a {
   text-decoration: none;
 }
@@ -55,7 +55,7 @@ ul {
 li {
   display: block;
 }
-#app {
+#app ,html,body{
   font-family: "楷体";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -64,6 +64,6 @@ li {
 }
  /* 控制 加载样式出现在屏幕中央位置 */
 .el-loading-spinner{
-  top: 14%;
+  top: 300px !important;
 }
 </style>

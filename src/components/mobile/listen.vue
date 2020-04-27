@@ -111,7 +111,7 @@ export default {
       img{
           width: 50%;
           border-radius: 50%;
-          animation: identifier 5s linear infinite;
+          animation: identifier 10s linear infinite;
       }
   }
   .margin_spam {
