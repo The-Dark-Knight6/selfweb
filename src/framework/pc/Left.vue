@@ -73,6 +73,14 @@ export default {
               routers: "/alink"
             }
           ]
+        },{
+          title:'实验室',
+          child:[
+            {
+              name:'周杰伦',
+              routers:'/jay'
+            }
+          ]
         }
       ]
     };

@@ -11,6 +11,7 @@ let api = {
     yi:music + '一路向北.mp3',
     shuo:music + '说了再见.mp3',
     shen:music + '绅士.mp3',
+    songs:server + 'jay_song.json',
 }
 
 export default api;

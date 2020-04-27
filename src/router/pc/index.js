@@ -23,6 +23,10 @@ let router = new Router({
       path: '/sometext',
       component: resolve => require(['@/components/pc/sometext'], resolve),
     },
+    {
+      path: '/jay',
+      component: resolve => require(['@/components/pc/jay'], resolve),
+    },
   ]
 })
 /**
