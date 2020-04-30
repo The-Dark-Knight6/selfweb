@@ -25,6 +25,15 @@
         </template>
       </el-table-column>
     </el-table>
+    <div class="pagination">
+      <el-pagination
+        @current-change="handleCurrentChange"
+        :current-page.sync="currentPage1"
+        :page-size="10"
+        layout="total, prev, pager, next"
+        :total="100"
+      ></el-pagination>
+    </div>
   </div>
 </template>
 <script>
@@ -32,6 +41,7 @@ export default {
   name: "jay",
   data() {
     return {
+      currentPage1: 1,
       tableData: []
     };
   },
@@ -39,6 +49,9 @@ export default {
     this.getdata();
   },
   methods: {
+    handleCurrentChange(e) {
+      console.log(e);
+    },
     down() {
       this.$message("未完成的功能！");
     },
@@ -53,6 +66,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.pagination {
+  margin:12px 0;
+  text-align: center;
+}
 @keyframes identifier {
   from {
     transform: rotate(0deg);
