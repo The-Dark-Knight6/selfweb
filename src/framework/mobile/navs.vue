@@ -40,6 +40,10 @@ export default {
         {
           url: "/listen",
           name: "周杰伦"
+        },
+         {
+          url: "/theday",
+          name: "日历"
         }
       ],
       item_img: [

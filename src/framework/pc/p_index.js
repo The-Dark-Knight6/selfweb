@@ -9,9 +9,12 @@ import api from '../../assets/apis/api'
 import VueResource from 'vue-resource'
 
 Vue.use(ElementUI);
+//设置全局数据 api （接口）
 Vue.prototype.api = api;
 Vue.use(VueResource)
 
+//设置 全局数据 $myself
+Vue.prototype.$myself = 'welcome to my blog...';
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
