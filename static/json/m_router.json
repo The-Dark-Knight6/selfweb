@@ -1,28 +1,28 @@
 {
-    "list":[
-        {
-          "url": "/",
-          "name": "中央"
-        },
-        {
-          "url": "/adert",
-          "name": "一则广告"
-        },
-        {
-          "url": "/sometext",
-          "name": "语言"
-        },
-        {
-          "url": "/links",
-          "name": "链接"
-        },
-        {
-          "url": "/listen",
-          "name": "周杰伦"
-        },
-        {
-          "url": "/theday",
-          "name": "日历"
-        }
-      ]
+  "list": [
+    {
+      "url": "/",
+      "name": "中央"
+    },
+    {
+      "url": "/adert",
+      "name": "一则广告"
+    },
+    {
+      "url": "/sometext",
+      "name": "语言"
+    },
+    {
+      "url": "/links",
+      "name": "链接"
+    },
+    {
+      "url": "/listen",
+      "name": "周杰伦"
+    },
+    {
+      "url": "/theday",
+      "name": "日历"
+    }
+  ]
 }

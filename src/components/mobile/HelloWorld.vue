@@ -171,7 +171,7 @@ export default {
   padding: 0 15px;
   background: url("../../assets/img/8576.jpg") no-repeat;
   background-size: cover;
-  height: 200px;
+  height: 230px;
   overflow: hidden;
   ul {
     animation: identifier 8s forwards;
