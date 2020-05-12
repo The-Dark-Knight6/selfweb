@@ -12,6 +12,8 @@ let api = {
     shuo:music + '说了再见.mp3',
     shen:music + '绅士.mp3',
     songs:server + 'jay_song.json',
+    m_router:server + 'm_router.json',
+    p_router:server + 'p_router.json'
 }
 
 export default api;

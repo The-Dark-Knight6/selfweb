@@ -17,7 +17,8 @@ export default {
   name: "App",
   data() {
     return {
-      loading: true
+      loading: true,
+      allofpage:[]
     };
   },
   mounted() {
@@ -55,15 +56,17 @@ ul {
 li {
   display: block;
 }
-#app ,html,body{
+#app,
+html,
+body {
   font-family: "楷体";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   font-size: 16px;
 }
- /* 控制 加载样式出现在屏幕中央位置 */
-.el-loading-spinner{
+/* 控制 加载样式出现在屏幕中央位置 */
+.el-loading-spinner {
   top: 300px !important;
 }
 </style>

@@ -47,45 +47,20 @@ export default {
       isCollapse: false,
       isact: false,
       isout: false,
-      menu_box: [
-        {
-          title: "中央",
-          child: [
-            {
-              name: "首页",
-              routers: "/"
-            },
-            {
-              name: "一则广告",
-              routers: "/pc_adert"
-            }
-          ]
-        },
-        {
-          title: "闲言碎语",
-          child: [
-            {
-              name: "奇葩说",
-              routers: "/sometext"
-            },
-            {
-              name: "好链接",
-              routers: "/alink"
-            }
-          ]
-        },{
-          title:'实验室',
-          child:[
-            {
-              name:'周杰伦',
-              routers:'/jay'
-            }
-          ]
-        }
-      ]
+      menu_box: []
     };
   },
+  mounted() {
+    this.getdata();
+  },
   methods: {
+    getdata() {
+      let url = this.api.p_router;
+      this.$http.get(url).then(res => {
+        let my = res.data;
+        this.menu_box = my.list;
+      });
+    },
     //路由跳转
     push_to(par) {
       this.$router.push({

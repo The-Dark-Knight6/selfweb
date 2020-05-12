@@ -41,7 +41,7 @@ export default {
     this.countTime();
   },
   methods: {
-    countTime: function() {
+    countTime() {
       let tig = this.timebox;
       let data = new Date();
       let hour = data.getHours();

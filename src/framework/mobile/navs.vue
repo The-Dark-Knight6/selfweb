@@ -20,32 +20,7 @@ export default {
     return {
       mus: require("../../assets/qing.mp3"),
       activeName: "/",
-      allofpage: [
-        {
-          url: "/",
-          name: "中央"
-        },
-        {
-          url: "/adert",
-          name: "一则广告"
-        },
-        {
-          url: "/sometext",
-          name: "语言"
-        },
-        {
-          url: "/links",
-          name: "链接"
-        },
-        {
-          url: "/listen",
-          name: "周杰伦"
-        },
-         {
-          url: "/theday",
-          name: "日历"
-        }
-      ],
+      allofpage: [],
       item_img: [
         require("../../assets/img/menu.png"),
         require("../../assets/img/ico2.png"),
@@ -54,7 +29,17 @@ export default {
       drawer: false
     };
   },
+  mounted() {
+    this.getdata();
+  },
   methods: {
+    getdata() {
+      let url = this.api.m_router;
+      this.$http.get(url).then(res => {
+        let my = res.data;
+        this.allofpage = my.list;
+      });
+    },
     //   抽屉的页面跳转
     now_tab(el) {
       this.drawer = false;
