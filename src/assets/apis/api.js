@@ -13,7 +13,8 @@ let api = {
     shen:music + '绅士.mp3',
     songs:server + 'jay_song.json',
     m_router:server + 'm_router.json',
-    p_router:server + 'p_router.json'
+    p_router:server + 'p_router.json',
+    thespray:server + 'thespray.json'
 }
 
 export default api;

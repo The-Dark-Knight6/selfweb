@@ -23,6 +23,10 @@
     {
       "url": "/theday",
       "name": "日历"
+    },
+    {
+      "url": "/spray",
+      "name": "浪"
     }
   ]
 }

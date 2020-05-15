@@ -31,6 +31,10 @@ let router = new Router({
       path: '/theday',
       component: resolve => require(['@/components/mobile/theday'], resolve),
     },
+    {
+      path: '/spray',
+      component: resolve => require(['@/components/mobile/spray'], resolve),
+    },
   ]
 })
 /**

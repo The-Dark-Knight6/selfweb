@@ -84,7 +84,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .drawer_box {
-  margin: 0 1.8rem;
+  margin: 0 1.5rem;
   .box_link {
     margin: 0 1rem;
   }
