@@ -27,6 +27,10 @@
     {
       "url": "/spray",
       "name": "浪"
+    },
+    {
+      "url": "/theform",
+      "name": "表单测试"
     }
   ]
 }

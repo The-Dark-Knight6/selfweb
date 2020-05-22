@@ -7,7 +7,7 @@
     element-loading-background="rgba(0, 0, 0, 0.8)"
   >
     <navs></navs>
-    <router-view />
+    <router-view  v-if="isRouterAlive"></router-view>
   </div>
 </template>
 
@@ -15,10 +15,17 @@
 import navs from "./navs";
 export default {
   name: "App",
+  //单页面刷新的 isRouterAlive
+  provide() {
+    return {
+      reload: this.reload
+    };
+  },
   data() {
     return {
       loading: true,
-      allofpage:[]
+      allofpage: [],
+      isRouterAlive: true
     };
   },
   mounted() {
@@ -28,6 +35,14 @@ export default {
   },
   components: {
     navs
+  },
+  methods: {
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(function() {
+        this.isRouterAlive = true;
+      });
+    }
   }
 };
 </script>

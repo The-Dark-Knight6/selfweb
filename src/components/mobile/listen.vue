@@ -78,7 +78,7 @@ export default {
     down(par) {
       let arr = ["qing", "yi", "shuo", "shen"],
         url = this.api[arr[par]],
-        name = url.split("sound")[1].replace("/", ""),
+        name = url.split("images")[1].replace("/", ""),
         a = document.createElement("a");
       a.href = url;
       a.download = name;

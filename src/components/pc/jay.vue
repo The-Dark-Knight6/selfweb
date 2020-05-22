@@ -3,10 +3,25 @@
     <div class="theimg">
       <img src="../../assets/img/adfqew2514.jpg" alt />
     </div>
-    <el-table :data="tableData" :cell-style="{'text-align':'center'}" size="mini" border>
+    <el-form size="mini" label-width="80px">
+      <p class="spacial_p">周杰伦世纪精选，万年永恒</p>
+      <el-button
+        style="float:right;margin-top:12px"
+        type="primary"
+        size="mini"
+        @click="dialogVisible=!dialogVisible"
+      >添加</el-button>
+    </el-form>
+    <el-table
+      :data="tableData"
+      :cell-style="{'text-align':'center'}"
+      size="mini"
+      border
+      v-loading="loading"
+    >
       <el-table-column type="index" label="序号"></el-table-column>
-      <el-table-column prop="name" label="歌名"></el-table-column>
-      <el-table-column prop="aim" label="专辑"></el-table-column>
+      <el-table-column prop="song" label="歌名"></el-table-column>
+      <el-table-column prop="album" label="专辑"></el-table-column>
       <el-table-column prop="lyric" label="歌词" show-overflow-tooltip></el-table-column>
       <el-table-column label="热度">
         <template slot-scope="scope">
@@ -14,8 +29,8 @@
             disabled
             show-score
             text-color="#ff9900"
-            v-model="scope.row.like"
-          >score-template="{scope.row.like}"</el-rate>
+            v-model="scope.row.hot"
+          >score-template="{scope.row.hot}"</el-rate>
         </template>
       </el-table-column>
       <el-table-column label="操作">
@@ -27,47 +42,122 @@
     </el-table>
     <div class="pagination">
       <el-pagination
+        @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
-        :current-page.sync="currentPage1"
+        :current-page.sync="currentPage"
         :page-size="10"
-        layout="total, prev, pager, next"
-        :total="100"
+        layout="total,prev, pager, next, jumper"
+        :total="total"
       ></el-pagination>
     </div>
+    <el-dialog :visible.sync="dialogVisible" width="40%">
+      <el-dialog width="30%" title="验证身份" :visible.sync="innerVisible" append-to-body>
+        <el-form label-width="80px">
+          <el-form-item label="密码：">
+            <el-input v-model="the_password" show-password size="mini" placeholder="请输入添加密码："></el-input>
+          </el-form-item>
+        </el-form>
+        <span slot="footer" class="dialog-footer">
+          <el-button @click="innerVisible = false" size="mini">取 消</el-button>
+          <el-button type="primary" @click="sure_doadd" size="mini">确 定</el-button>
+        </span>
+      </el-dialog>
+      <addjay v-if="dialogVisible" @children="father"></addjay>
+    </el-dialog>
   </div>
 </template>
+
 <script>
+import addjay from "./addjay";
 export default {
   name: "jay",
+  inject: ["reload"], //单页面刷新
+  components: {
+    addjay
+  },
   data() {
     return {
-      currentPage1: 1,
-      tableData: []
+      loading: false,
+      innerVisible: false,
+      dialogVisible: false,
+      currentPage: 1,
+      tableData: [],
+      total: 1,
+      the_password: "",
+      par: {}
     };
   },
   mounted() {
-    this.getdata();
+    this.getdata(1);
   },
   methods: {
+    //确认添加password
+    sure_doadd() {
+      let params = {},
+        url = this.api.addjay;
+      params = this.par;
+      if (this.the_password == "fulihua123") {
+        this.$http.post(url, { params: params }).then(res => {
+          let my = res.data;
+          if (my.status == 1) {
+            this.$message.success("添加成功！");
+            this.reload();
+          }
+        });
+      } else {
+        this.$message("密码错误，请联系管理员或放弃添加！");
+      }
+    },
+    //获取子组件传来的数据
+    father(el) {
+      this.innerVisible = true;
+      this.par = el;
+    },
+    //前往第n页
+    handleSizeChange(e) {
+      this.getdata(e);
+    },
+    //前后翻页
     handleCurrentChange(e) {
-      console.log(e);
+      this.getdata(e);
     },
     down() {
       this.$message("未完成的功能！");
     },
-    getdata() {
-      let url = this.api.songs;
-      this.$http.get(url).then(res => {
+    //获取数据
+    getdata(page) {
+      this.loading = true;
+      let url = this.api.jay,
+        params = {};
+      params.page = page;
+      this.$http.get(url, { params: params }).then(res => {
         let my = res.data;
-        this.tableData = my.list;
+        // console.log(my);
+        this.tableData = my.data;
+        this.total = my.total;
+        this.loading = false;
       });
     }
   }
 };
 </script>
+
 <style lang="scss" scoped>
+@mixin spacial_p {
+  background: linear-gradient(to right, black, red);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.spacial_p {
+  display: inline-block;
+  color: #ccc;
+  cursor: pointer;
+  &:hover {
+    @include spacial_p;
+  }
+}
 .pagination {
-  margin:12px 0;
+  margin: 12px 0;
   text-align: center;
 }
 @keyframes identifier {
@@ -94,8 +184,6 @@ export default {
 }
 /deep/ .el-table th {
   background: #f7faff;
-}
-/deep/ .el-table th {
   text-align: center;
 }
 </style>

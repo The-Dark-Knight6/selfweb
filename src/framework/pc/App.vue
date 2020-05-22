@@ -11,7 +11,7 @@
         <left></left>
       </el-aside>
       <el-container>
-        <router-view />
+        <router-view v-if="isRouterAlive"/>
       </el-container>
     </el-container>
   </div>
@@ -24,15 +24,29 @@ export default {
   components: {
     left
   },
+  provide() {
+    return {
+      reload: this.reload
+    };
+  },
   data(){
     return{
-      loading:true
+      loading:true,
+      isRouterAlive: true
     }
   },
   mounted(){
     setTimeout(()=>{
       this.loading=false;
     },1500);
+  },
+  methods:{
+    reload() {
+      this.isRouterAlive = false;
+      this.$nextTick(function() {
+        this.isRouterAlive = true;
+      });
+    }
   }
 };
 </script>
