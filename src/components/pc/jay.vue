@@ -64,19 +64,27 @@
       </el-dialog>
       <addjay v-if="dialogVisible" @children="father"></addjay>
     </el-dialog>
+    <div>
+      <wang v-model="detail" :isClear="isClear" @change="change"></wang>
+      <el-button size='mini' type='warning' @click="publics">发布</el-button>
+    </div>
   </div>
 </template>
 
 <script>
-import addjay from "./addjay";
+import addjay from "./addjay"; //添加音乐的子组件
+import wang from './wang'; //富文本编辑器
 export default {
   name: "jay",
   inject: ["reload"], //单页面刷新
   components: {
-    addjay
+    addjay,
+    wang
   },
   data() {
     return {
+      detail:'',
+      isClear:false,
       loading: false,
       innerVisible: false,
       dialogVisible: false,
@@ -84,13 +92,28 @@ export default {
       tableData: [],
       total: 1,
       the_password: "",
-      par: {}
+      par: {},
+      contents:''
     };
   },
   mounted() {
     this.getdata(1);
   },
   methods: {
+    publics(){
+      let url = this.api.mysql,params={};
+      params.contents = this.contents;
+      this.$http.post(url,{params:params}).then(res=>{
+        let my = res.data;
+        if(my.status == 1){
+          console.log(my)
+        }
+      })
+    },
+    change(val){
+      // console.log(val);
+      this.contents = val;
+    },
     //确认添加password
     sure_doadd() {
       let params = {},

@@ -19,7 +19,8 @@ let api = {
     thespray:server + 'thespray.json',
     mysql:newset + 'mysql',
     jay:newset + 'jay',
-    addjay:newset + 'addjay'
+    addjay:newset + 'addjay',
+    deljay:newset + 'deljay'
 }
 
 export default api;

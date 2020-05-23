@@ -84,17 +84,17 @@ export default {
   margin-top: 20px;
   p {
     text-align: center;
-    border-right: 0.1px dotted;
+    // border-right: 0.1px dotted;
     // width: 10px;
     /* 动画定义长度  此也就是h1标签长度 */
-    width: 75ch;
+    width: 55ch;
     /* # of chars */
     margin: 1rem 0;
     white-space: nowrap;
     overflow: hidden;
     // animation-delay:2s;
-    animation: typing 5s steps(60, end) 1.2s,
-      blink-caret 0.3s step-end infinite alternate 1.2s;
+    animation: typing 5s steps(70, end) 1.2s,
+      blink-caret 0.5s step-end infinite alternate 1.2s;
   }
 }
 .action {
