@@ -66,14 +66,15 @@
     </el-dialog>
     <div>
       <wang v-model="detail" :isClear="isClear" @change="change"></wang>
-      <el-button size='mini' type='warning' @click="publics">发布</el-button>
+      <el-button size="mini" type="warning" @click="publics">发布</el-button>
     </div>
+    <input type="file" @change="toupload" />
   </div>
 </template>
 
 <script>
 import addjay from "./addjay"; //添加音乐的子组件
-import wang from './wang'; //富文本编辑器
+import wang from "./wang"; //富文本编辑器
 export default {
   name: "jay",
   inject: ["reload"], //单页面刷新
@@ -83,8 +84,8 @@ export default {
   },
   data() {
     return {
-      detail:'',
-      isClear:false,
+      detail: "",
+      isClear: false,
       loading: false,
       innerVisible: false,
       dialogVisible: false,
@@ -93,24 +94,39 @@ export default {
       total: 1,
       the_password: "",
       par: {},
-      contents:''
+      contents: ""
     };
   },
   mounted() {
     this.getdata(1);
   },
   methods: {
-    publics(){
-      let url = this.api.mysql,params={};
-      params.contents = this.contents;
-      this.$http.post(url,{params:params}).then(res=>{
+    toupload(el) {
+      console.log(el.target.files[0]);
+      let data = new FormData();
+      data.append("files", el.target.files[0]);
+      let url = this.api.mysql,
+        params = {};
+      // params.contents = this.contents;
+      this.$http.post(url, data).then(res => {
         let my = res.data;
-        if(my.status == 1){
-          console.log(my)
+        if (my.status == 1) {
+          console.log(my);
         }
-      })
+      });
     },
-    change(val){
+    publics() {
+      // let url = this.api.mysql,
+      //   params = {};
+      // params.contents = this.contents;
+      // this.$http.post(url, { params: params }).then(res => {
+      //   let my = res.data;
+      //   if (my.status == 1) {
+      //     console.log(my);
+      //   }
+      // });
+    },
+    change(val) {
       // console.log(val);
       this.contents = val;
     },
