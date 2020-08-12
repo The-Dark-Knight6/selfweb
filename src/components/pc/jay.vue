@@ -64,11 +64,11 @@
       </el-dialog>
       <addjay v-if="dialogVisible" @children="father"></addjay>
     </el-dialog>
-    <div>
+    <!-- <div>
       <wang v-model="detail" :isClear="isClear" @change="change"></wang>
       <el-button size="mini" type="warning" @click="publics">发布</el-button>
     </div>
-    <input type="file" @change="toupload" />
+    <input type="file" @change="toupload" /> -->
   </div>
 </template>
 

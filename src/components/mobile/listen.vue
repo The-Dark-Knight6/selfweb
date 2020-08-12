@@ -70,13 +70,13 @@ export default {
     },
     //试听
     trying(par) {
-      let arr = ["qing", "yi", "shuo", "shen"],
+      let arr = ["qing", "yi", "shuo"],
         url = this.api[arr[par]];
       window.open(url);
     },
     //下载歌曲
     down(par) {
-      let arr = ["qing", "yi", "shuo", "shen"],
+      let arr = ["qing", "yi", "shuo"],
         url = this.api[arr[par]],
         name = url.split("images")[1].replace("/", ""),
         a = document.createElement("a");

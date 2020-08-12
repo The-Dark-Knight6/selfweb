@@ -12,8 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/apis': {  //使用"/api"来代替"http://f.apiplus.c" 
-      //target: 'http://129.204.61.122:8088/', //服务器源地址 
-      target: 'http://localhost:3000',
+      target: 'http://129.204.61.122:8088/', //服务器源地址 
+      // target: 'http://localhost:3000',
       changeOrigin: true, //改变源 
       pathRewrite: { 
         '^/apis': '/' //路径重写 

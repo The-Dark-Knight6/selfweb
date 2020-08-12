@@ -2,8 +2,8 @@
   <div class="HelloWorld">
     <!-- 返回顶部 -->
     <el-backtop></el-backtop>
-    <div class="the_head">
-      <ul>
+    <div class="the_head" @click="head_hide = !head_hide">
+      <ul v-show="head_hide">
         <li v-for="(v,i) in head_poem" :key="i">{{v}}</li>
       </ul>
     </div>
@@ -46,6 +46,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
+      head_hide:true,
       the_qq: false,
       botimg: [
         require("../../assets/img/social_github.svg"),
@@ -169,7 +170,8 @@ export default {
 }
 .the_head {
   padding: 0 15px;
-  background: url("../../assets/img/8576.jpg") no-repeat;
+  // background: url("../../assets/img/8576.jpg") no-repeat; 
+  background: url("http://www.neweb.top/bing.php") no-repeat; //每日必应壁纸
   background-size: cover;
   height: 230px;
   overflow: hidden;
@@ -180,7 +182,7 @@ export default {
       display: block;
       margin: 0.8rem 0;
       text-align: center;
-      color: #e9e4e4;
+      color: whitesmoke;
     }
   }
 }

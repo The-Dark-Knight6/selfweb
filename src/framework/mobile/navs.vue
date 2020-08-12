@@ -18,7 +18,7 @@ export default {
   name: "navs",
   data() {
     return {
-      mus: require("../../assets/qing.mp3"),
+      mus: this.api.yequ,
       activeName: "/",
       allofpage: [],
       item_img: [

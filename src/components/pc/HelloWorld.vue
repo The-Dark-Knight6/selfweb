@@ -25,7 +25,7 @@ export default {
       to_play: false,
       head_poem: [],
       music_src: require("../../assets/img/bulb.svg"),
-      mus: require("../../assets/qing.mp3"),
+      mus: this.api.yequ
     };
   },
   created() {
@@ -105,7 +105,7 @@ export default {
 .hello {
   width: 100%;
   height: 100%;
-  background: url("../../assets/img/8524.jpg") no-repeat;
+  background: url("http://www.neweb.top/bing.php") no-repeat;  //每日必应壁纸
   background-size: 100% 100%;
   position: relative;
   .blub {
@@ -137,7 +137,7 @@ export default {
     margin: 0 auto;
     p {
       margin: 20px 0;
-      color: gray;
+      color: black;
       font-size: 0.6rem;
       font-family: "微软雅黑";
       span {
