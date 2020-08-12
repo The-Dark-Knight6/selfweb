@@ -1,15 +1,15 @@
 <template>
   <div class="spray">
     <el-backtop></el-backtop>
-    <img src="../../assets/img/d6ca7b0a7.png" alt />
+    <img :src="houlang" alt />
     <div class="after">
       <p v-for="(v,i) in after" :key="i">{{v}}</p>
     </div>
-    <img src="../../assets/img/351001beec831d55.png" alt />
+    <img :src="lizhi" alt />
     <div class="after">
       <p v-for="(v,i) in before" :key="i">{{v}}</p>
     </div>
-    <img src="../../assets/img/006Xzox6oq3n.jpg" alt />
+    <img :src="luoji" alt />
     <div class="after">
       <p v-for="(v,i) in married" :key="i">{{v}}</p>
     </div>
@@ -21,6 +21,9 @@ export default {
   name: "spray",
   data() {
     return {
+      houlang:this.api.houlang,
+      lizhi:this.api.lizhi,
+      luoji:this.api.luoji,
       after: [],
       before: [],
       married: []

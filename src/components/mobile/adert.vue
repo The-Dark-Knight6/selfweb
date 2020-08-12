@@ -4,7 +4,7 @@
     <ul>
       <li v-for="(v,i) in head_data" :key="i">{{v}}</li>
     </ul>
-    <img src="../../assets/img/selfnum.jpg" alt />
+    <img :src="selfnum" alt />
     <div>
       <ul>
         <li v-for="(v,i) in lists" :key="i">{{v}}</li>
@@ -18,6 +18,7 @@ export default {
   name: "adert",
   data() {
     return {
+      selfnum:this.api.selfnum,
       head_data: [],
       lists: []
     };

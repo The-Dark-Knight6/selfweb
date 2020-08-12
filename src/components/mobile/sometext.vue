@@ -5,7 +5,7 @@
       <li v-for="(v,i) in data" :key="i">{{v}}</li>
     </ul>
     <div class="theimg">
-      <img src="../../assets/img/icanbb.jpg" alt />
+      <img :src="icanbb" alt />
     </div>
     <ul class="thepoem">
       <li v-for="(v,i) in poem" :key="i">
@@ -19,6 +19,7 @@ export default {
   name: "sometext",
   data() {
     return {
+      icanbb:this.api.icanbb,
       data: [],
       poem: []
     };

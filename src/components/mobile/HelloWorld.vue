@@ -13,7 +13,7 @@
       </ul>
     </div>
     <div class="img_box">
-      <img src="../../assets/img/25043752.gif" alt />
+      <img :src="bear" alt />
     </div>
     <div class="the_story">
       <ul>
@@ -21,7 +21,7 @@
       </ul>
     </div>
     <div class="img_box">
-      <img src="../../assets/img/25043751.gif" alt />
+      <img :src="goodstu" alt />
     </div>
     <div class="last_poem">
       <ul>
@@ -29,7 +29,7 @@
       </ul>
     </div>
     <div class="img_box_qq" v-show="the_qq">
-      <img src="../../assets/img/myqq.png" alt />
+      <img :src="myqq" alt />
     </div>
     <div class="the_bottom">
       <div class="bot_img">
@@ -46,8 +46,11 @@ export default {
   name: "HelloWorld",
   data() {
     return {
+      goodstu:this.api.goodstu,
+      myqq:this.api.myqq,
       head_hide:true,
       the_qq: false,
+      bear:this.api.bear,
       botimg: [
         require("../../assets/img/social_github.svg"),
         require("../../assets/img/qqs.svg"),

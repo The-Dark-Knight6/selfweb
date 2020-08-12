@@ -20,7 +20,21 @@ let api = {
     mysql:newset + 'mysql',
     jay:newset + 'jay',
     addjay:newset + 'addjay',
-    deljay:newset + 'deljay'
+    deljay:newset + 'deljay',
+    bear:newset + 'images/bear.gif',
+    goodstu:newset + 'images/goodstu.gif',
+    myqq:newset + 'images/myqq.png',
+    houlang:newset + 'images/houlang.png',
+    lizhi:newset + 'images/lizhi.png',
+    luoji:newset + 'images/luoji.jpg',
+    selfnum:newset + 'images/selfnum.jpg',
+    xiyang:newset + 'images/xiyang.jpg',
+    bj:newset + 'images/bj.jpg',
+    books:newset + 'images/books.jpg',
+    code:newset + 'images/code.jpg',
+    getb:newset + 'images/getb.jpg',
+    icanbb:newset + 'images/icanbb.jpg',
+    jaypic:newset + 'images/jaypic.jpg',
 }
 
 export default api;

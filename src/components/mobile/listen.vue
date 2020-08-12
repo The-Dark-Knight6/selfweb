@@ -1,7 +1,7 @@
 <template>
   <div class="listen">
       <div class="rota_img">
-          <img src="../../assets/img/adfqew2514.jpg" alt="">
+          <img :src="jaypic" alt="">
       </div>
     <el-collapse v-model="activeName" accordion>
       <el-collapse-item v-for="(v,i) in data" :key="i" :title="v" :name="String(i)">
@@ -37,6 +37,7 @@ export default {
   name: "listen",
   data() {
     return {
+      jaypic:this.api.jaypic,
       commend_title: "",
       descretion: "",
       dialogVisible: false,

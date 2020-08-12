@@ -18,15 +18,15 @@ export default {
   data() {
     return {
       urls: [
-        require("../../assets/img/8524.jpg"),
-        require("../../assets/img/8576.jpg"),
-        require("../../assets/img/309617.jpg"),
-        require("../../assets/img/315441.jpg"),
-        require("../../assets/img/323822.jpg"),
-        require("../../assets/img/selfnum.jpg")
+        this.api.selfnum,
+        this.api.getb,
+        this.api.code,
+        this.api.books,
+        this.api.bj,
+        this.api.xiyang,
       ],
       head_data: [],
-      lists: []
+      lists: [],
     };
   },
   mounted() {
@@ -35,14 +35,14 @@ export default {
   methods: {
     getdata() {
       let url = this.api.m_ad;
-      this.$http.get(url).then(res => {
+      this.$http.get(url).then((res) => {
         let my = res.data;
-        console.log(my);
+        // console.log(my);
         this.head_data = my.head;
         this.lists = my.list;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

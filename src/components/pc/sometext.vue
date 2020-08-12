@@ -5,7 +5,7 @@
       <el-tag v-for="(v,i) in data" :key="i" type="info" effect="plain">{{ v }}</el-tag>
     </div>
     <div class="cen_img">
-      <img src="../../assets/img/icanbb.jpg" alt />
+      <img :src="icanbb" alt />
     </div>
     <div class="bot_poem">
       <el-card class="box-card">
@@ -22,6 +22,7 @@ export default {
   name: "sometext",
   data() {
     return {
+      icanbb:this.api.icanbb,
       data: [],
       list: []
     };

@@ -1,7 +1,7 @@
 <template>
   <div class="jay">
     <div class="theimg">
-      <img src="../../assets/img/adfqew2514.jpg" alt />
+      <img :src="jaypic" alt />
     </div>
     <el-form size="mini" label-width="80px">
       <p class="spacial_p">周杰伦世纪精选，万年永恒</p>
@@ -84,6 +84,7 @@ export default {
   },
   data() {
     return {
+      jaypic:this.api.jaypic,
       detail: "",
       isClear: false,
       loading: false,
