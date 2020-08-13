@@ -11,6 +11,8 @@ import VueResource from 'vue-resource'
 Vue.use(ElementUI);
 //设置全局数据 api （接口）
 Vue.prototype.api = api;
+//全局获取当前的路由
+Vue.prototype.act_router = window.location.href.split('#')[1];
 Vue.use(VueResource)
 
 //设置 全局数据 $myself

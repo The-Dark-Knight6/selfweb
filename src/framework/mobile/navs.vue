@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       mus: this.api.yequ,
-      activeName: "/",
+      activeName: this.actrouter,
       allofpage: [],
       item_img: [
         require("../../assets/img/menu.png"),
@@ -46,6 +46,7 @@ export default {
       this.$router.push({
         path: el.name
       });
+      console.log(el)
     },
     //导航栏的操作
     click_img(el) {

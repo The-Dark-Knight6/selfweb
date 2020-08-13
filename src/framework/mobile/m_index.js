@@ -15,6 +15,8 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false
 Vue.prototype.api = api;
 Vue.prototype.$http = axios;
+//全局获取当前路由地址
+Vue.prototype.actrouter = window.location.href.split('#')[1];
 
 /* eslint-disable no-new */
 new Vue({
