@@ -3,12 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from '../../router/pc/index'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
 import api from '../../assets/apis/api'
 import VueResource from 'vue-resource'
 
-Vue.use(ElementUI);
+// Vue.use(ElementUI);
 //设置全局数据 api （接口）
 Vue.prototype.api = api;
 //全局获取当前的路由

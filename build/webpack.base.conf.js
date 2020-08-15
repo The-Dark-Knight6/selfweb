@@ -8,8 +8,6 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
-
 module.exports = {
   context: path.resolve(__dirname, '../'),
   //-----------------修改开始-----------------------------
@@ -21,6 +19,10 @@ module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
+  },
+  externals: {
+    'vue': 'Vue',
+    'element-ui': 'ElementUI',
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
