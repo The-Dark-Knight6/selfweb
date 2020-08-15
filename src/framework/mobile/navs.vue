@@ -1,5 +1,5 @@
 <template>
-  <div class="navs">
+  <div class="navs" :class="{thenavs:!drawer}">
     <div class="the_navs">
       <img v-for="(v,i) in item_img" :key="i" :src="v" @click="click_img(i)" />
     </div>
@@ -24,9 +24,9 @@ export default {
       item_img: [
         require("../../assets/img/menu.png"),
         require("../../assets/img/ico2.png"),
-        require("../../assets/img/mus.svg")
+        require("../../assets/img/mus.svg"),
       ],
-      drawer: false
+      drawer: false,
     };
   },
   mounted() {
@@ -35,7 +35,7 @@ export default {
   methods: {
     getdata() {
       let url = this.api.m_router;
-      this.$http.get(url).then(res => {
+      this.$http.get(url).then((res) => {
         let my = res.data;
         this.allofpage = my.list;
       });
@@ -44,18 +44,19 @@ export default {
     now_tab(el) {
       this.drawer = false;
       this.$router.push({
-        path: el.name
+        path: el.name,
       });
-      console.log(el)
+      window.scrollTo(0, 0);
     },
     //导航栏的操作
     click_img(el) {
       switch (el) {
         case 1:
           this.$router.push({
-            path: "/"
+            path: "/",
           });
           this.activeName = "/";
+          window.scrollTo(0, 0);
           break;
         case 2:
           let but = this.$refs.MusicPlay;
@@ -65,25 +66,29 @@ export default {
               title: "提示",
               message: "音乐开始播放!",
               type: "success",
-              position: "bottom-right"
+              position: "bottom-right",
             });
           } else {
             this.$refs.MusicPlay.pause();
             this.$notify.info({
               title: "提示",
               message: "音乐停止播放！",
-              position: "bottom-right"
+              position: "bottom-right",
             });
           }
           break;
         default:
           this.drawer = true;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
+//避免和左侧菜单点击时候的隐藏效果冲突 将这个头部导航fixed做个判断来避开冲突
+.thenavs {
+  position: fixed;
+}
 .drawer_box {
   margin: 0 1.5rem;
   .box_link {
@@ -93,6 +98,10 @@ export default {
 .navs {
   background-color: white;
   border-bottom: 2px solid #eee;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  border-bottom: 1px solid green;
   .the_navs {
     display: flex;
     justify-content: space-between;

@@ -7,7 +7,7 @@
     element-loading-background="rgba(0, 0, 0, 0.8)"
   >
     <navs></navs>
-    <router-view  v-if="isRouterAlive"></router-view>
+    <router-view  v-if="isRouterAlive" class="thefixed"></router-view>
   </div>
 </template>
 
@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style lang='scss'>
+.thefixed{
+  margin-top: 56px;
+}
 a {
   text-decoration: none;
 }
