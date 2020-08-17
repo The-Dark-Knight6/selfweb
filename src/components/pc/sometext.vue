@@ -9,7 +9,7 @@
     </div>
     <div class="bot_poem">
       <el-card class="box-card">
-        <div v-for="(v,i) in list" :key="i+1" class="text item">
+        <div v-for="(v,i) in list" :key="i+1" class="item">
           <el-alert center :title="v" :closable="false" type="info"></el-alert>
         </div>
       </el-card>
