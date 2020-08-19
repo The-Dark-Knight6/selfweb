@@ -39,6 +39,10 @@ let router = new Router({
       path: '/theform',
       component: resolve => require(['@/components/mobile/theform'], resolve),
     },
+    {
+      path: '/maps',
+      component: resolve => require(['@/components/mobile/maps'], resolve),
+    },
   ]
 })
 /**

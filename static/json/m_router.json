@@ -31,6 +31,10 @@
     {
       "url": "/theform",
       "name": "评论"
+    },
+    {
+      "url": "/maps",
+      "name": "地理位置"
     }
   ]
 }

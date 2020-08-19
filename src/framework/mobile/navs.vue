@@ -100,7 +100,7 @@ export default {
   border-bottom: 2px solid #eee;
   top: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   border-bottom: 1px solid green;
   .the_navs {
     display: flex;

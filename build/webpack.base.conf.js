@@ -23,6 +23,7 @@ module.exports = {
   externals: {
     'vue': 'Vue',
     'element-ui': 'ElementUI',
+    "AMap": "AMap",
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
